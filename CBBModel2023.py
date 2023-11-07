@@ -4,16 +4,16 @@ import pandas as pd
 import json
 import numpy as np
 
-# Define the find_team function here
+#Define the find_team function here
 def find_team(team_name):
-    # Assuming 'kenpom' is a pandas DataFrame with team information
+    #Assuming kenpom is a pandas DataFrame with team information
     team_info = kenpom[kenpom['Team'] == team_name]
     
     if not team_info.empty:
         return team_info
     else:
-        # Return a default value or handle the case when the team is not found
-        return pd.DataFrame()  # Empty DataFrame if not found
+        #Return a default value or handle the case when the team is not found
+        return pd.DataFrame()  #Empty DataFrame if not found
 
 
 #Load the team name mapping from an Excel file
@@ -56,7 +56,7 @@ for row in rows[1:]:
 
 kenpom = pd.DataFrame(data_list, columns=['Team', 'AdjO', 'AdjD', 'AdjT'])
 #print(kenpom)
-# League Averages
+#League Averages
 avg_adjO = kenpom['AdjO'].mean()
 avg_adjD = kenpom['AdjD'].mean()
 avg_adjT = kenpom['AdjT'].mean()
@@ -212,9 +212,9 @@ for index in range(0, len(slate), 2):
                 away_win_count += 1
 
             #Compare scores and count covers
-            if home_score_sim - away_score_sim > home_odds:
+            if home_score_sim + home_odds > away_score_sim:
                 home_cover_count += 1
-            elif away_score_sim - home_score_sim > away_odds:
+            elif away_score_sim + away_odds > home_score_sim:
                 away_cover_count += 1
 
             #Check if the total score is over the Vegas total
