@@ -22,13 +22,13 @@ Before using the script, make sure you have the following prerequisites installe
 1. Clone this repository to your local machine or download the script.
 
    ```bash
-   git clone https://github.com/yourusername/CollegeBasketballBettingModel.git
+   git clone https://github.com/ryanbiancavilla/CBBModel2023.git
    ```
 
 2. Navigate to the project directory.
 
    ```bash
-   cd CollegeBasketballBettingModel
+   cd CBBModel2023
    ```
 
 3. Install the required Python libraries using pip.
